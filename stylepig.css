@@ -51,7 +51,7 @@ label {
 }
 
 input,
-button,
+#submit,
 select,
 textarea {
   margin: 0;
@@ -60,7 +60,7 @@ textarea {
   margin-bottom: inherit;
 }
 
-button {
+#submit {
   border: none;
 }
 
@@ -137,6 +137,14 @@ input {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.winner-pig{
+    border-radius: 5%;
+    align-items: center;
+    display: flex;
+}
+#photoPig{
+    align-items: center;
+}
 .form-control {
   width: 100%;
 }
@@ -145,6 +153,10 @@ input {
   width: 100%;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+ #info {
+    font-style: italic;
+    font-size: 0.5rem;
 }
 
 .input-radio,
@@ -166,6 +178,63 @@ input {
   border: 1px solid #ced4da;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  .close{
+      background-color: transparent;
+      border-color: none;
+  }
+
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #ff0ad6;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
 #submit {
   display: block;
   width: 100%;
@@ -173,13 +242,20 @@ input {
   background: rgb(175, 1, 103);
   border-radius: 15px;
   color: white;
-
   cursor: pointer;
+  text-align: center;
+  text-decoration:none;
 }
 
+
+
+
 /* Pig animation style from tyler hancock*/
+
+
+
 #pig {
-  max-width: 150px;
+  max-width: 250px;
 }
 
 #ear_sm_1_,

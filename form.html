@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <link rel="stylesheet" href="./stylepig.css"></link>
     <title>Pig Survey</title>
-    <link rel="shortcut icon" type="image/png" href="/images/pig.png"/>
+    <link rel="shortcut icon" type="image/png" href="./images/pig.png"/>
 
 </head>
 <body>
-    <div class="container">
+    
+    <div class="container" >
         <header class="header">
             <svg version="1.1" id="pig" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 2000 2000" style="enable-background:new 0 0 2000 2000;" xml:space="preserve">
@@ -91,7 +92,8 @@
            C575.6,667.9,569.2,661.5,561.3,661.5z"/>
          </svg>        
             <h1 id="title"><strong>Piggy survey</strong></h1>
-            <p id="description">We will ask you few question about your knowlege about most wonderful animals in all over world.</p>
+            <p id="description">We will ask you a few questions about the most wonderful animals in all over the world.</p>
+            <p id="info">* We don't send and store your data filled in form. It's test form to play by pig lovers.</p>
         </header>
         <form id="survey-form">
             <div class="form-group">
@@ -102,6 +104,7 @@
                 type="text" 
                 required/>
             </div>
+            
             <div class="form-group">
                 <label id="email-label" for="email"><strong>E-mail:</strong></label>
                 <input id="email" 
@@ -151,13 +154,23 @@
             </div>
             <div class="form-group">
                 <p><strong>What name would you like to give the pig?</strong> </p>
-                <textarea class="input-textarea" placeholder="Enter name of pig..."></textarea>
+                <textarea class="input-textarea" placeholder="Enter name of pig..." required></textarea>
             </div>
             <div class="form-group">
-            <button onclick="send()" type="submit" id="submit">Submit</button>
+                <button id="submit" onclick="submitForm(event)">Submit</button>          
             </div>
-</form>
-</div>
-<script src="/mainform.js"></script>
+            <div id="winnerPig" class="overlay">
+                <div class="popup">
+                    <p><strong><span id="pigName"></span> say Thank You!</strong></p>
+                    <a class="close" href="#" onclick="closeMessage(event)">&times;</a>
+                    <div class="content" id="photoPig">
+                        
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="mainform.js"></script>
 </body>
 </html>
