@@ -1,7 +1,7 @@
-// const projectName = 'pig-survey';
+const projectName = 'pig-survey';
 
 function submitForm(event) {
-    // event.preventDefault()
+    event.preventDefault()
     const form = document.getElementById('survey-form');
         if (form.checkValidity() == false) {
             var list = form.querySelectorAll(':invalid');
@@ -65,7 +65,7 @@ function closeMessage(event){
 }
 
 function resetForm(){
-    // window.scrollTo(0, 0);  
-    // window.location.reload();
+    window.scrollTo(0, 0);  
+    window.location.reload();
 
 }
